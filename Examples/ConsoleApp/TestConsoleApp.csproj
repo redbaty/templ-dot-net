@@ -36,9 +36,12 @@
     <Reference Include="DocX">
       <HintPath>..\..\Templ.NET\bin\Debug\DocX.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +52,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Templ.NET\bin\Debug\Templ.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Words.NET, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocX.1.1.0\lib\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ContentDemo.cs" />
@@ -58,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="README.md" />
     <None Include="Templates\HelloWorld.docx" />
     <None Include="Templates\ContentDemo.docx" />

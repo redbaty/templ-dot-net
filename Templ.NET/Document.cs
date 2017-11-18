@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Novacode;
+using Xceed.Words.NET;
 
 namespace TemplNET
 {
@@ -133,8 +133,8 @@ namespace TemplNET
         public static IEnumerable<Paragraph> Paragraphs(DocX doc)
         {
             return doc.Paragraphs
-            .Concat(doc.Headers?.odd?.Paragraphs?.ToList() ?? new List<Paragraph>())
-            .Concat(doc.Footers?.odd?.Paragraphs?.ToList() ?? new List<Paragraph>());
+            .Concat(doc.Headers?.Odd?.Paragraphs?.ToList() ?? new List<Paragraph>())
+            .Concat(doc.Footers?.Odd?.Paragraphs?.ToList() ?? new List<Paragraph>());
         }
 
         public static void CellCopyProperties (Cell fromCell, Cell toCell)

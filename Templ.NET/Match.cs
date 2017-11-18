@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Novacode;
+using Xceed.Words.NET;
 
 namespace TemplNET
 {
@@ -149,18 +149,18 @@ namespace TemplNET
         private void InsertPicture(TemplGraphic graphic, int width)
         {
             // Simple. Picture at index(es). Ensure you load picture first.
-            Paragraph.FindAll(Placeholder).ForEach(idx =>
-            {
-                if (width>0)
-                {
-                    Paragraph.InsertPicture(graphic.Picture((uint)width), idx + Placeholder.Length);
-                }
-                else
-                {
-                    Paragraph.InsertPicture(graphic.Picture(), idx + Placeholder.Length);
-                }
-                Paragraph.Alignment = (graphic.Alignment ?? Paragraph.Alignment);
-            });
+            //Paragraph.FindAll(Placeholder).ForEach(idx =>
+            //{
+            //    if (width>0)
+            //    {
+            //        Paragraph.InsertPicture(graphic.Picture((uint)width), idx + Placeholder.Length);
+            //    }
+            //    else
+            //    {
+            //        Paragraph.InsertPicture(graphic.Picture(), idx + Placeholder.Length);
+            //    }
+            //    Paragraph.Alignment = (graphic.Alignment ?? Paragraph.Alignment);
+            //});
         }
         /// <summary>
         /// Replace the placeholder with a picture in the paragraph. The graphic must already be loaded into the same document.

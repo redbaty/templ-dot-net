@@ -3,8 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Drawing;
 using System.IO.Compression;
-using Novacode;
 using System;
+using Xceed.Words.NET;
 
 namespace TemplNET
 {
@@ -101,15 +101,15 @@ namespace TemplNET
         {
             var document = TemplDoc.EmptyDocument;
             var docx = document.Docx;
-            var calibri = new FontFamily("Calibri");
+           
 
             //TODO implement
-            Paragraph title = docx.InsertParagraph().Append("Templ.NET Modular Build Report").FontSize(24).Font(calibri).Bold();
+            Paragraph title = docx.InsertParagraph().Append("Templ.NET Modular Build Report").FontSize(24).Font("Calibri").Bold();
             docx.InsertParagraph();
             foreach(TemplModule mod in modules)
             {
-                Paragraph heading = docx.InsertParagraph().Append(mod.Name).FontSize(14).Font(calibri).Bold();
-                Paragraph body = docx.InsertParagraph().FontSize(10).Font(calibri);
+                Paragraph heading = docx.InsertParagraph().Append(mod.Name).FontSize(14).Font("Calibri").Bold();
+                Paragraph body = docx.InsertParagraph().FontSize(10).Font("Calibri");
                 Table t = body.InsertTableBeforeSelf(1, 2);
                 t.Design = TableDesign.ColorfulGridAccent2;
                 t.Rows[0].Cells[0].Paragraphs[0].Bold();

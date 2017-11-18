@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Novacode;
+using Xceed.Words.NET;
 
 namespace TemplNET
 {
@@ -26,7 +26,7 @@ namespace TemplNET
         /// Underlying DocX image instance
         /// <para/>Not populated until document build time, as it requires a reference to a DocX document
         /// </summary>
-        protected Novacode.Image Image;
+        protected Image Image;
 
         /// <summary>
         /// Image data as memory stream
@@ -120,9 +120,9 @@ namespace TemplNET
         /// Generate a Picture instance, which can be inserted into a Document
         /// </summary>
         /// <param name="width">The width in pixels</param>
-        public Picture Picture(uint width)
+        public Picture Picture(int width)
         {
-            var pic = Image.CreatePicture();
+            var pic = Image.CreatePicture(400,width);
             var scaling = ((float)width / pic.Width);
             pic.Height = (int)(pic.Height * scaling);
             pic.Width = (int)(pic.Width * scaling);
